@@ -1,42 +1,164 @@
-# 📡 SKYVEE TECH - WiFi Scanner Python version
+<h1 align="center">📡 Network Scanner </h1>
+<h3 align="center">// scan, detect, and export. powered by python.</h3>
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
+<p align="center">
+  <img src="https://img.shields.io/badge/Platform-Windows-blue?style=flat-square&logo=windows" />
+  <img src="https://img.shields.io/badge/Language-Python-green?style=flat-square&logo=python" />
+  <img src="https://img.shields.io/badge/Version-1.0-orange?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
+  <img src="https://img.shields.io/badge/Made%20by-Skyvee Tech-red?style=flat-square" />
+</p>
 
-**SKYVEE TECH WiFi Scanner** adalah alat berbasis CLI (Command Line Interface) yang dirancang untuk membantu pengelolaan jaringan lokal pada sistem operasi Windows. Alat ini memungkinkan pengguna untuk melihat password WiFi yang tersimpan, memindai perangkat yang terhubung di jaringan, dan mengekspor data ke format CSV.
+---
+
+## 📌 About
+
+Terminal-based WiFi Scanner tool by **SKYVEE TECH** — versi Python yang lebih powerful dari WiFi Viewer sebelumnya.
+
+Tidak hanya lihat password WiFi tersimpan, tool ini juga bisa **scan semua device di jaringan**, lihat info jaringan lengkap, dan export hasilnya ke CSV.
 
 ---
 
-## 🚀 Fitur Utama
+## ⚡ Features
 
-* **🔓 Scan Saved WiFi + Passwords**: Menampilkan daftar semua SSID WiFi yang pernah terhubung beserta kata sandinya.
-* **🔍 Network Device Scanner**: Melakukan pemindaian IP aktif di jaringan lokal untuk melihat perangkat yang sedang terhubung.
-* **📊 Network Information**: Menampilkan detail adapter jaringan (IP, MAC Address, DNS, dll) secara ringkas.
-* **📂 Export to CSV**: Menyimpan daftar password WiFi yang tersimpan ke dalam file `.csv` untuk cadangan.
-* **🎨 Colorized Interface**: Tampilan terminal yang berwarna dan mudah dibaca berkat library `colorama`.
+| Menu | Fitur |
+|------|-------|
+| `[1]` | Scan semua WiFi tersimpan + password + authentication type |
+| `[2]` | Scan semua device aktif di jaringan lokal + hostname |
+| `[3]` | Lihat info jaringan lengkap (IP, DNS, Gateway, MAC Address) |
+| `[4]` | Export semua WiFi tersimpan ke file `.csv` |
+| `[0]` | Exit |
 
 ---
-## 📦 Versi Executable (.exe)
-Untuk pengguna umum, Anda dapat langsung menjalankan file .exe tanpa perlu menginstal Python:
 
-1. Unduh file SKYVEE_WiFi_Scanner.exe dari folder dist/ atau halaman Releases.
-2. Klik kanan pada file tersebut dan pilih Run as Administrator.
-   *Catatan: Hak akses Admin diperlukan agar sistem bisa membaca data password WiFi.
-3. Jika muncul peringatan Windows Protected Your PC, klik More Info > Run Anyway.
+## 🚀 How to Use (User)
 
-## ⚠️ Catatan Keamanan & Privasi
-- False Positive: File executable yang dibuat dengan PyInstaller seringkali dideteksi sebagai ancaman oleh antivirus (seperti Windows Defender) karena melakukan pemindaian jaringan. Ini adalah False Positive. Kode ini aman dan transparan.
-- Etika: Gunakan alat ini hanya untuk keperluan edukasi atau mengelola jaringan milik pribadi.
+### Menggunakan .exe (Direkomendasikan)
 
-## 🛠️ Cara Instalasi (Untuk Developer)
+1. Download `SKYVEE_TECH_WIFI_SCANNER.exe` dari halaman **Releases**
+2. Klik kanan → **Run as Administrator**
+3. Pilih menu yang diinginkan
+4. Done!
 
-Jika Anda ingin menjalankan atau memodifikasi kode sumber (`.py`):
+> ⚠️ **Wajib Run as Administrator** — tanpa ini password WiFi dan scan jaringan tidak akan berjalan.
 
-1. **Clone Repository**:
-   ```bash
-   git clone [https://github.com/Skyvee-Tech/WIFI-SCANNER.git](https://github.com/Skyvee-Tech/WIFI-SCANNER.git)
-   cd WIFI-SCANNER
-2. **Instal Library**:
-  ```bash
-   pip install colorama
+> ⚠️ **Windows Defender / Antivirus** mungkin mendeteksi file `.exe` sebagai ancaman. Ini adalah **False Positive** karena file dibuat menggunakan PyInstaller. Kode sumber tersedia untuk diperiksa di repo ini.
+
+---
+
+## 🛠️ Developer Guide
+
+Panduan ini untuk kamu yang ingin menjalankan, memodifikasi, atau berkontribusi pada source code.
+
+### Requirements
+
+- Python 3.8 atau lebih baru
+- pip (sudah termasuk di Python 3.4+)
+- Windows 10 / 11
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/Skyvee-Tech/Network-Scanner.git
+cd Network-Scanner
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install colorama scapy
+```
+
+### 3. Jalankan Script
+
+```bash
+python SKYVEE_TECH_WIFI_SCANNER.py
+```
+
+> Jalankan CMD atau Terminal sebagai **Administrator** sebelum menjalankan script.
+
+### 4. Build ke .exe (Opsional)
+
+Kalau kamu mau build ulang jadi `.exe`, install PyInstaller dulu:
+
+```bash
+pip install pyinstaller
+```
+
+Lalu build:
+
+```bash
+pyinstaller --onefile SKYVEE_TECH_WIFI_SCANNER.py
+```
+
+File `.exe` akan tersimpan di folder `dist/`.
+
+### Struktur File
+
+```
+📁 Network-Scanner
+├── SKYVEE_TECH_WIFI_SCANNER.py   <- source code utama
+├── SKYVEE_TECH_WIFI_SCANNER.exe  <- executable (sudah di-build)
+├── README.md                     <- dokumentasi
+└── LICENSE                       <- lisensi MIT
+```
+
+### Dependencies
+
+| Library | Fungsi | Install |
+|---------|--------|---------|
+| `colorama` | Tampilan berwarna di terminal | `pip install colorama` |
+| `scapy` | Network scanning | `pip install scapy` |
+| `subprocess` | Jalankan command Windows | Built-in Python |
+| `socket` | Deteksi hostname device | Built-in Python |
+| `csv` | Export hasil ke spreadsheet | Built-in Python |
+
+---
+
+## 📋 Output Example
+
+### Scan Saved WiFi
+```
+  [1] SSID        : MyHomeWifi
+      Password    : mypassword123
+      Auth        : WPA2-Personal
+  ----------------------------------------------------------
+  [*] Total WiFi found: 5
+```
+
+### Scan Devices in Network
+```
+  [*] Your IP     : 192.168.1.5
+  [*] Scanning    : 192.168.1.1 - 192.168.1.254
+
+  [+] 192.168.1.1        | router.local
+  [+] 192.168.1.3        | DESKTOP-ABC123
+  [+] 192.168.1.7        | Unknown
+
+  [*] Total devices found: 3
+```
+
+### Export CSV
+```
+  [+] Exported 15 WiFi profiles!
+  [+] File saved as: wifi_export_20260220_153000.csv
+```
+
+---
+
+## ⚠️ Disclaimer
+
+Tool ini dibuat untuk keperluan **edukasi dan penggunaan pribadi**.
+Hanya gunakan pada jaringan milik sendiri atau yang sudah ada izinnya.
+Developer tidak bertanggung jawab atas penyalahgunaan tool ini.
+
+---
+
+## 📜 License
+
+MIT License — bebas dipakai, dimodifikasi, dan disebarkan.
+Tetap cantumkan credit ya. 😎
+
+---
+
+<p align="center">Made with 💻 by <a href="https://github.com/Skyvee-Tech">Skyvee Tech</a></p>
