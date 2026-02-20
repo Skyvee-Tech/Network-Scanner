@@ -19,10 +19,11 @@
 ---
 ## 📦 Versi Executable (.exe)
 Untuk pengguna umum, Anda dapat langsung menjalankan file .exe tanpa perlu menginstal Python:
-1.Unduh file SKYVEE_WiFi_Scanner.exe dari folder dist/ atau halaman Releases.
-2.Klik kanan pada file tersebut dan pilih Run as Administrator.
-  *Catatan: Hak akses Admin diperlukan agar sistem bisa membaca data password WiFi.
-3.Jika muncul peringatan Windows Protected Your PC, klik More Info > Run Anyway.
+
+1. Unduh file SKYVEE_WiFi_Scanner.exe dari folder dist/ atau halaman Releases.
+2. Klik kanan pada file tersebut dan pilih Run as Administrator.
+   *Catatan: Hak akses Admin diperlukan agar sistem bisa membaca data password WiFi.
+3. Jika muncul peringatan Windows Protected Your PC, klik More Info > Run Anyway.
 
 ## ⚠️ Catatan Keamanan & Privasi
 - False Positive: File executable yang dibuat dengan PyInstaller seringkali dideteksi sebagai ancaman oleh antivirus (seperti Windows Defender) karena melakukan pemindaian jaringan. Ini adalah False Positive. Kode ini aman dan transparan.
@@ -36,6 +37,6 @@ Jika Anda ingin menjalankan atau memodifikasi kode sumber (`.py`):
    ```bash
    git clone [https://github.com/Skyvee-Tech/WIFI-SCANNER.git](https://github.com/Skyvee-Tech/WIFI-SCANNER.git)
    cd WIFI-SCANNER
-2.**Instal Library**:
+2. **Instal Library**:
   ```bash
    pip install colorama
