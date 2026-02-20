@@ -1,4 +1,4 @@
-# 📡 SKYVEE TECH - WiFi Scanner Python versionv
+# 📡 SKYVEE TECH - WiFi Scanner Python version
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)
